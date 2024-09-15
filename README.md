@@ -1,5 +1,4 @@
 # HackerRank-PlagiarismChecker
-# HackerRank Plagiarism Checker
 
 ## Overview
 
@@ -31,32 +30,6 @@ This project scrapes data from the HackerRank dashboard to track student attempt
 - **Database**: The name of your MySQL database.
 - **Host**: The host where MySQL is running (default is localhost).
 
-## Code Explanation
 
-### `main.py`
 
-This FastAPI backend file defines endpoints to interact with the application.
 
-```python
-from fastapi import FastAPI, Depends
-from sqlalchemy.orm import Session
-import models
-import crud
-
-app = FastAPI()
-
-class StudentData(BaseModel):
-    username: str
-    contest_name: str
-
-@app.post("/fetch_attempts/")
-def fetch_attempts(data: StudentData, db: Session = Depends(get_db)):
-    result = crud.fetch_student_attempts(db, data.username, data.contest_name)
-    return result
-
-def get_db():
-    db = models.SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
