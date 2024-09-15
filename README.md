@@ -4,6 +4,16 @@
 
 This project scrapes data from the HackerRank dashboard to track student attempts and stores the results in a MySQL database. It uses Python with Selenium for web scraping and SQL for data storage.
 
+## Tech Stack
+
+- **Backend Framework**: [FastAPI](https://fastapi.tiangolo.com/)
+- **Web Scraping**: [Selenium](https://www.selenium.dev/)
+- **Database**: [MySQL](https://www.mysql.com/)
+- **ORM**: [SQLAlchemy](https://www.sqlalchemy.org/)
+- **Python Libraries**: 
+  - `uvicorn` for ASGI server
+  - `pymysql` for MySQL connection
+    
 ## Prerequisites
 
 1. **Install Dependencies**: Ensure you have Python and `pip` installed. Then install the required Python packages.
